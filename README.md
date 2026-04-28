@@ -1,12 +1,11 @@
 <h1 align="center">Привет 👋</h1>
 
 <p align="center">
-<i>Self-hosted всё, что движется. Канон живёт на <a href="https://git.kushnaren.co">git.kushnaren.co</a>, здесь — публичная витрина.</i>
+<i>Self-hosted всё, что движется. Здесь — публичная витрина.</i>
 </p>
 
 <p align="center">
 <a href="https://kushnaren.co"><img src="https://img.shields.io/badge/site-kushnaren.co-2ea44f" alt="kushnaren.co"></a>
-<a href="https://git.kushnaren.co"><img src="https://img.shields.io/badge/git-git.kushnaren.co-0a7ea4" alt="git.kushnaren.co"></a>
 </p>
 
 ---
@@ -33,7 +32,7 @@
 
 ### 🧪 Чем занимаюсь
 
-- Self-hosted инфраструктура `kushnaren.co` — Proxmox, Docker (Portainer, ~30 стеков), Forgejo
+- Self-hosted домашняя инфраструктура — Proxmox, Docker (Portainer, ~30 стеков), Forgejo
 - Автоматизация и CI на Forgejo Actions
 - Эксперименты с локальными LLM — MLX на Apple Silicon, Ollama, Claude Code
 - Obsidian как «второй мозг» через MCP
@@ -41,7 +40,7 @@
 
 ### 📂 Здесь
 
-Большая часть моих репозиториев — приватные, на [git.kushnaren.co/evgeny](https://git.kushnaren.co/evgeny). На GitHub — публичная витрина:
+Большая часть моих репозиториев — приватные. На GitHub — публичная витрина:
 
 - [`golod-app`](https://github.com/evgn-k/golod-app) — PWA-счётчик голодания
 
