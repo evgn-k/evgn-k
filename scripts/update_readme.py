@@ -15,8 +15,11 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from email.utils import parsedate_to_datetime
 from pathlib import Path
+from urllib.parse import urlparse
 
 FEED_URL = os.environ.get("FEED_URL", "https://kushnaren.co/index.xml")
+# Фид отдаёт не только статьи: там же фотопосты и служебные /search/ и /404.html.
+POSTS_PREFIX = os.environ.get("POSTS_PREFIX", "/posts/")
 README = Path(__file__).resolve().parent.parent / "README.md"
 MAX_POSTS = 5
 START = "<!-- BLOG:START -->"
@@ -33,13 +36,18 @@ def fetch_feed(url):
 def parse_items(raw):
     root = ET.fromstring(raw)
     items = []
+    total = 0
     for item in root.findall("./channel/item"):
+        total += 1
         title = (item.findtext("title") or "").strip()
         link = (item.findtext("link") or "").strip()
         if not title or not link:
             continue
+        # Сравниваем именно путь: подстрока совпала бы и на хосте posts.example.com.
+        if not urlparse(link).path.startswith(POSTS_PREFIX):
+            continue
         items.append((title, link, format_date(item.findtext("pubDate"))))
-    return items
+    return items, total
 
 
 def format_date(pub_date):
@@ -68,14 +76,26 @@ def main():
         return 1
 
     try:
-        items = parse_items(fetch_feed(FEED_URL))
+        items, total = parse_items(fetch_feed(FEED_URL))
     except (urllib.error.URLError, OSError, ET.ParseError) as err:
         print(f"фид {FEED_URL} недоступен или не разобран: {err}", file=sys.stderr)
         return 0
 
-    if not items:
+    if not total:
         print(f"в фиде {FEED_URL} нет записей — README оставлен без изменений", file=sys.stderr)
         return 0
+
+    if not items:
+        # Скорее всего сменилась схема URL. Замереть на вчерашней ленте лучше,
+        # чем стереть секцию, поэтому это не ошибка сборки.
+        print(
+            f"ни одна из {total} записей фида не подходит под префикс {POSTS_PREFIX} — "
+            "README оставлен без изменений",
+            file=sys.stderr,
+        )
+        return 0
+
+    print(f"в фиде {total} записей, под {POSTS_PREFIX} подходит {len(items)}", file=sys.stderr)
 
     block = f"{START}\n{render(items)}\n{END}"
     updated = re.sub(
