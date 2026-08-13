@@ -20,13 +20,11 @@
 
 ### 📝 Из блога
 
-<!-- BLOG:START -->
 - [Как мы с тобой сейчас пишем этот пост: модель, инструменты, рабочий процесс 🤖](https://kushnaren.co/posts/2026-07-21-kak-my-s-toboj-seychas-pishem-etot-post/) — 2026-07-21
 - [Hugo 0.164.0: тёмно-светлые пары Chroma и починка регрессии производительности 🎨](https://kushnaren.co/posts/2026-07-19-hugo-0-164-0-chroma-dark-light/) — 2026-07-19
 - [Что нового в Hugo 0.161–0.163: AVIF, хардненинг и гибкие permalinks 🚀](https://kushnaren.co/posts/2026-06-19-hugo-0-161-0-163-avif-i-hardening/) — 2026-06-19
 - [Пять проходов impeccable по блогу: что AI-инструмент дизайна реально умеет 🛠](https://kushnaren.co/posts/2026-04-28-pyat-prokhodov-impeccable-na-bloge/) — 2026-04-28
 - [Qwen3-Coder-Next-MLX-4bit: Локальная разработка на Mac 🍏](https://kushnaren.co/posts/2026-04-24-qwen3-coder-next-mlx-4bit/) — 2026-04-24
-<!-- BLOG:END -->
 
 ### 📊 Парк дома
 
@@ -82,7 +80,7 @@
 На GitHub выношу то, что имеет смысл показывать:
 
 - [`golod-app`](https://github.com/evgn-k/golod-app) — PWA-счётчик голодания
-- [`evgn-k`](https://github.com/evgn-k/evgn-k) — этот README; секция «Из блога» обновляет сама себя по RSS
+- [`evgn-k`](https://github.com/evgn-k/evgn-k) — этот README
 
 ### ✉️ Связаться
 
