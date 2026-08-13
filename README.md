@@ -77,10 +77,7 @@
 ### 📂 Здесь
 
 Код живёт в своём Forgejo — там канон, там CI, там приватное остаётся приватным.
-На GitHub выношу то, что имеет смысл показывать:
-
-- [`golod-app`](https://github.com/evgn-k/golod-app) — PWA-счётчик голодания
-- [`evgn-k`](https://github.com/evgn-k/evgn-k) — этот README
+На GitHub — публичная витрина.
 
 ### ✉️ Связаться
 
